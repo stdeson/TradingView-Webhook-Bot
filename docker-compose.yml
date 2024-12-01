@@ -1,7 +1,7 @@
 services:
-    tradingview-webhook-bot:
-        build: .
-        container_name: tradingview-webhook-bot
-        ports:
-            - '8080:8080'
-        restart: unless-stopped
+  tradingview-webhook-bot:
+    build: .
+    container_name: tradingview-webhook-bot
+    ports:
+      - '8080:8080'
+    restart: unless-stopped
