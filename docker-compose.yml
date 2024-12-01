@@ -12,6 +12,8 @@ services:
       - ./nginx/cert:/etc/nginx/cert
     environment:
       - TZ=Asia/Shanghai
+    networks:
+      - my-network
 
 
   tradingview-webhook-bot:
@@ -20,5 +22,11 @@ services:
     ports:
       - '8080:8080'
     restart: unless-stopped
+    networks:
+      - my-network
 
+    
+networks:
+  my-network:
+    driver: bridge
   
