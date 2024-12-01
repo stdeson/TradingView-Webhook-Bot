@@ -1,5 +1,3 @@
----
-version: '3.9'
 services:
     tradingview-webhook-bot:
         build: .
