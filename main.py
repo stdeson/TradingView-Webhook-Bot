@@ -17,7 +17,7 @@ def get_timestamp():
     return timestamp
 
 
-@app.route("/api/webhook", methods=["POST"])
+@app.post("/api/webhook")
 def webhook():
     # 配置能回调本接口的IP白名单, 不在这里面的都直接返回401, 下面这四个IP是TradingView官方的
     whitelisted_ips = ['52.89.214.238', '34.212.75.30', '54.218.53.128', '52.32.178.7']
@@ -38,6 +38,10 @@ def webhook():
     except Exception as e:
         print("[X]", get_timestamp(), "Error:\n>", e)
         return jsonify({'message': 'Error'}), 400
+    
+@app.post("/ping")
+def ping():
+    return "pong"
 
 
 if __name__ == "__main__":
