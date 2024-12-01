@@ -39,7 +39,7 @@ def webhook():
         print("[X]", get_timestamp(), "Error:\n>", e)
         return jsonify({'message': 'Error'}), 400
     
-@app.post("/ping")
+@app.post("/api/ping")
 def ping():
     return "pong"
 
