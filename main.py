@@ -4,7 +4,7 @@
 # File Name             : main.py                 #
 # ----------------------------------------------- #
 
-from handler import send_alert
+# from handler import send_alert
 import config
 import time
 from flask import Flask, request, jsonify
@@ -29,7 +29,6 @@ def webhook():
             data = request.get_json()
             if data["key"] == config.sec_key:
                 print(get_timestamp(), "Alert Received & Sent!")
-                send_alert(data)
                 # TODO: 解析请求体, 通过ccxt向交易所 发起交易
                 return jsonify({'message': 'Webhook received successfully'}), 200
             else:
