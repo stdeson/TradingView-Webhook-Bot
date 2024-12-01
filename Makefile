@@ -4,6 +4,7 @@
 pull:
 	git pull
 	docker-compose up -d
+	docker restart nginx
 	docker restart tradingview-webhook-bot
 
 help:
