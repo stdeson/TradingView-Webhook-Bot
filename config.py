@@ -1,16 +1,8 @@
-# ----------------------------------------------- #
-# Plugin Name           : TradingView-Webhook-Bot #
-# Author Name           : fabston                 #
-# File Name             : config.py               #
-# ----------------------------------------------- #
+import os
 
-# TradingView Example Alert Message:
-# {
-# "key":"9T2q394M92", "telegram":"-1001298977502", "discord":"789842349670960670/BFeBBrCt-w2Z9RJ2wlH6TWUjM5bJuC29aJaJ5OQv9sE6zCKY_AlOxxFwRURkgEl852s3", "msg":"Long #{{ticker}} at `{{close}}`"
-# }
 
 sec_key = (
-    ""  # Can be anything. Has to match with "key" in your TradingView alert message
+    "MDeson987"  # 这个是用来校验是否是自己的消息
 )
 
 # Telegram Settings
@@ -34,12 +26,12 @@ tw_atoken = ""
 tw_asecret = ""
 
 # Email Settings
-send_email_alerts = False
-email_sender = ""  # Your email address
-email_receivers = ["", ""]  # Receivers, can be multiple
+send_email_alerts = True
+email_sender = "decenfrontier@gmail.com"  # Your email address
+email_receivers = ["stdeson@gmail.com", "ws156858@163.com"]  # Receivers, can be multiple
 email_subject = "Trade Alert!"
 
 email_port = 465  # SMTP SSL Port (ex. 465)
-email_host = ""  # SMTP host (ex. smtp.gmail.com)
-email_user = ""  # SMTP Login credentials
-email_password = ""  # SMTP Login credentials
+email_host = "smtp.gmail.com"  # SMTP host (ex. smtp.gmail.com)
+email_user = email_sender  # SMTP Login credentials
+email_password = os.getenv('EMAIL_PWD')  # SMTP Login credentials
