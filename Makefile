@@ -3,7 +3,6 @@
 
 pull:
 	git pull
-	make build
 	docker-compose up -d
 	docker restart tradingview-webhook-bot
 
